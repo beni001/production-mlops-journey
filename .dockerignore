@@ -1,0 +1,111 @@
+# ================================================================
+# .dockerignore — Docker build context exclusion list
+#
+# Docker's build context = everything sent to the daemon at build time
+# This file prevents large, sensitive, or irrelevant files from:
+#   1. Inflating image size
+#   2. Leaking secrets into the image layer history
+#   3. Slowing down every build with unnecessary file transfers
+#
+# Rule of thumb: if it's not src/ or requirements*.txt, exclude it
+# ================================================================
+
+# ── Raw data — the #1 cause of image size explosions ──────────
+# Your rideshare CSVs must NEVER be baked into the image.
+# Data enters the container at runtime via volume mount only.
+# Day 4 (DVC) versions this data — it lives outside git AND docker.
+data/
+*.csv
+*.parquet
+*.json
+*.gz
+*.zip
+
+# ── Model artifacts — never bake into the image ───────────────
+# If model.pkl is in the image, you must rebuild on every retrain.
+# MODEL_PATH env var + volume mount is the correct pattern.
+# Training writes to /models on host. Inference reads from /models.
+models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+*.bin
+*.pb
+
+# ── Git internals ─────────────────────────────────────────────
+# .git/ can be 100MB+ and contains your entire commit history.
+# The container has no use for git history.
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# ── Python cache — never belongs in an image ──────────────────
+# These are machine-specific compiled bytecode files.
+# They get regenerated automatically and cause cache poisoning
+# if carried between different Python versions.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────
+# If you have a local venv, it's 500MB+ of host-specific binaries.
+# The container builds its own clean environment from wheels.
+venv/
+.venv/
+env/
+.env/
+
+# ── Secret files — CRITICAL ───────────────────────────────────
+# .env files often contain API keys, passwords, connection strings.
+# If baked into an image and pushed to a registry = credentials leaked.
+# Docker image layers are permanent and searchable.
+.env
+.env.*
+*.env
+secrets/
+
+# ── Terraform — contains sensitive state ──────────────────────
+# terraform.tfstate contains VM IPs, credentials, resource IDs.
+# .terraform/ contains provider binaries (~200MB).
+# Neither belongs anywhere near a Docker image.
+infra/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+
+# ── Project directories not needed at runtime ─────────────────
+monitoring/
+docs/
+pipelines/
+features/
+
+# ── Jupyter notebooks ─────────────────────────────────────────
+# Notebooks are for exploration only — not reproducible production code.
+# If logic from a notebook is needed, it must be extracted to src/
+*.ipynb
+.ipynb_checkpoints/
+notebooks/
+
+# ── OS and editor noise ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ── DVC internals ─────────────────────────────────────────────
+# DVC cache and tmp files — not needed inside container
+.dvc/
+*.dvc

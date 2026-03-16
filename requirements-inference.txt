@@ -1,0 +1,40 @@
+# ================================================================
+# INFERENCE DEPENDENCIES — lean runtime only
+# Rule: if it's not needed to serve a prediction, it's not here
+#
+# Size comparison vs requirements.txt:
+#   Training image:  ~1.4GB (needs DVC, MLflow, scipy, click)
+#   Inference image: ~1.1GB (stripped to runtime essentials only)
+#
+# Upgrade path:
+#   - Moving model storage to AWS S3? Add: boto3==1.34.11
+#   - Moving to GCS?                 Add: google-cloud-storage==2.14.0
+# ================================================================
+
+# ── Serving framework (Day 16) ────────────────────────────────
+# fastapi: the REST API framework for /predict endpoint
+# uvicorn: the ASGI server that runs FastAPI (like nginx for Python)
+# pydantic: validates incoming JSON requests automatically
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.3
+
+# ── Model runtime ─────────────────────────────────────────────
+# Exact same versions as training — this is non-negotiable
+# Different versions = model behaves differently at inference
+# That's training-serving skew — the silent killer (Day 8)
+xgboost==2.0.3
+scikit-learn==1.3.2
+numpy==1.26.2
+joblib==1.3.2
+
+# ── Feature engineering ───────────────────────────────────────
+# Must match training exactly — same transformations, same versions
+# Day 8 (feature store) enforces this at the system level
+feature-engine==1.6.2
+pandas==2.1.4
+
+# ── Config ────────────────────────────────────────────────────
+# python-dotenv: reads MODEL_PATH and other env vars from .env
+# Never hardcode paths — always environment variables
+python-dotenv==1.0.1
