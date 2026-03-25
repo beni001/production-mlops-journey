@@ -1,0 +1,8 @@
+{
+  "model": "linear_regression",
+  "rmse_seconds": 472.47,
+  "mape_pct": 63.1,
+  "mean_error_seconds": -12.26,
+  "p95_error_seconds": 920.63,
+  "r2": 0.554
+}

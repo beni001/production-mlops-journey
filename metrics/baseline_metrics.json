@@ -1,0 +1,8 @@
+{
+  "model": "heuristic_baseline",
+  "rmse_seconds": 698.86,
+  "mape_pct": 87.66,
+  "mean_error_seconds": 62.44,
+  "p95_error_seconds": 1409.9,
+  "r2": 0.0242
+}

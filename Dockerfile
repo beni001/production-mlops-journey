@@ -113,6 +113,7 @@ WORKDIR /app
 # Data enters at runtime via volume mount (see VOLUME below)
 # This keeps the image size independent of your dataset size
 COPY src/ ./src/
+COPY features/ ./features/
 
 # Declare volume mount points as metadata
 # Actual data flows in at: docker run -v host_path:container_path

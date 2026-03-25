@@ -1,0 +1,11 @@
+{
+  "model": "xgboost_v1",
+  "rmse_seconds": 333.49,
+  "mape_pct": 32.91,
+  "mean_error_seconds": -5.99,
+  "p95_error_seconds": 641.7,
+  "r2": 0.7778,
+  "train_rmse_seconds": 296.17,
+  "overfit_gap_pct": 12.6,
+  "best_iteration": 299
+}

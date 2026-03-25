@@ -1,0 +1,5 @@
+outs:
+- md5: fed691cab9d094216363201d9774edf5
+  size: 1998
+  hash: md5
+  path: linear_model.pkl

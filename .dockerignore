@@ -88,7 +88,6 @@ infra/
 monitoring/
 docs/
 pipelines/
-features/
 
 # ── Jupyter notebooks ─────────────────────────────────────────
 # Notebooks are for exploration only — not reproducible production code.
