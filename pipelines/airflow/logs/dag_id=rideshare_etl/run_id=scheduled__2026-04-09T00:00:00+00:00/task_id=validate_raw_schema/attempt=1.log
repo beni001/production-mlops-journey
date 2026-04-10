@@ -1,0 +1,20 @@
+[2026-04-10T10:49:46.933+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: rideshare_etl.validate_raw_schema scheduled__2026-04-09T00:00:00+00:00 [queued]>
+[2026-04-10T10:49:46.946+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: rideshare_etl.validate_raw_schema scheduled__2026-04-09T00:00:00+00:00 [queued]>
+[2026-04-10T10:49:46.946+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-04-10T10:49:46.966+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): validate_raw_schema> on 2026-04-09 00:00:00+00:00
+[2026-04-10T10:49:46.974+0000] {standard_task_runner.py:60} INFO - Started process 210 to run task
+[2026-04-10T10:49:46.988+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'rideshare_etl', 'validate_raw_schema', 'scheduled__2026-04-09T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/rideshare_etl.py', '--cfg-path', '/tmp/tmp8g9cs3f5']
+[2026-04-10T10:49:46.995+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask validate_raw_schema
+[2026-04-10T10:49:47.224+0000] {task_command.py:423} INFO - Running <TaskInstance: rideshare_etl.validate_raw_schema scheduled__2026-04-09T00:00:00+00:00 [running]> on host d1efc9a0b5df
+[2026-04-10T10:49:47.576+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='rideshare_etl' AIRFLOW_CTX_TASK_ID='validate_raw_schema' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-09T00:00:00+00:00'
+[2026-04-10T10:49:47.597+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:315 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2026-04-10T10:49:47.598+0000] {rideshare_etl.py:116} INFO - [Task 1] Schema validation for run: 2026-04-09 00:00:00+00:00
+[2026-04-10T10:49:47.599+0000] {rideshare_etl.py:117} INFO - [Task 1] Reading raw data from: /opt/***/data/raw/rideshare_logs.csv
+[2026-04-10T10:49:47.744+0000] {rideshare_etl.py:128} INFO - [Task 1] Columns found: ['id', 'vendor_id', 'pickup_datetime', 'dropoff_datetime', 'passenger_count', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude', 'store_and_fwd_flag', 'trip_duration']
+[2026-04-10T10:49:47.784+0000] {rideshare_etl.py:160} INFO - [Task 1] Schema validation PASSED.
+[2026-04-10T10:49:47.784+0000] {rideshare_etl.py:161} INFO - [Task 1] All 11 required columns present.
+[2026-04-10T10:49:47.784+0000] {rideshare_etl.py:162} INFO - [Task 1] Timestamps parseable. GPS bounds valid.
+[2026-04-10T10:49:47.785+0000] {python.py:201} INFO - Done. Returned value was: {'columns_found': ['id', 'vendor_id', 'pickup_datetime', 'dropoff_datetime', 'passenger_count', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude', 'store_and_fwd_flag', 'trip_duration'], 'sample_rows': 1000, 'validated_at': '2026-04-09 00:00:00+00:00'}
+[2026-04-10T10:49:47.882+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=rideshare_etl, task_id=validate_raw_schema, execution_date=20260409T000000, start_date=20260410T104946, end_date=20260410T104947
+[2026-04-10T10:49:47.925+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-10T10:49:47.985+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

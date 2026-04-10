@@ -1,0 +1,21 @@
+[2026-04-10T10:52:37.647+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: rideshare_etl.run_quality_gates manual__2026-04-10T10:52:28+00:00 [queued]>
+[2026-04-10T10:52:37.660+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: rideshare_etl.run_quality_gates manual__2026-04-10T10:52:28+00:00 [queued]>
+[2026-04-10T10:52:37.660+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-04-10T10:52:37.682+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): run_quality_gates> on 2026-04-10 10:52:28+00:00
+[2026-04-10T10:52:37.693+0000] {standard_task_runner.py:60} INFO - Started process 275 to run task
+[2026-04-10T10:52:37.703+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'rideshare_etl', 'run_quality_gates', 'manual__2026-04-10T10:52:28+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/rideshare_etl.py', '--cfg-path', '/tmp/tmpmjc8yojd']
+[2026-04-10T10:52:37.708+0000] {standard_task_runner.py:88} INFO - Job 9: Subtask run_quality_gates
+[2026-04-10T10:52:37.823+0000] {task_command.py:423} INFO - Running <TaskInstance: rideshare_etl.run_quality_gates manual__2026-04-10T10:52:28+00:00 [running]> on host d1efc9a0b5df
+[2026-04-10T10:52:37.975+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='rideshare_etl' AIRFLOW_CTX_TASK_ID='run_quality_gates' AIRFLOW_CTX_EXECUTION_DATE='2026-04-10T10:52:28+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-10T10:52:28+00:00'
+[2026-04-10T10:52:37.985+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:315 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2026-04-10T10:52:37.985+0000] {rideshare_etl.py:203} INFO - [Task 2] Quality gates for run: 2026-04-10 10:52:28+00:00
+[2026-04-10T10:52:45.003+0000] {rideshare_etl.py:207} INFO - [Task 2] Full dataset loaded: 1,458,644 rows
+[2026-04-10T10:52:45.093+0000] {rideshare_etl.py:275} INFO - [Task 2] All quality gates PASSED.
+[2026-04-10T10:52:45.094+0000] {rideshare_etl.py:276} INFO - [Task 2] Row count: 1,458,644 (above minimum 100,000)
+[2026-04-10T10:52:45.097+0000] {rideshare_etl.py:277} INFO - [Task 2] Null rates: within acceptable bounds
+[2026-04-10T10:52:45.098+0000] {rideshare_etl.py:278} INFO - [Task 2] Zero coordinates: within acceptable bounds
+[2026-04-10T10:52:45.099+0000] {rideshare_etl.py:279} INFO - [Task 2] No negative durations or future timestamps
+[2026-04-10T10:52:45.371+0000] {python.py:201} INFO - Done. Returned value was: {'total_rows': 1458644, 'gates_passed': True, 'checked_at': '2026-04-10 10:52:28+00:00'}
+[2026-04-10T10:52:45.475+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=rideshare_etl, task_id=run_quality_gates, execution_date=20260410T105228, start_date=20260410T105237, end_date=20260410T105245
+[2026-04-10T10:52:45.536+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-10T10:52:45.623+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

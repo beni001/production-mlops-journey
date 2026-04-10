@@ -1,0 +1,60 @@
+[2026-04-10T10:50:50.710+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: rideshare_etl.transform_to_parquet scheduled__2026-04-09T00:00:00+00:00 [queued]>
+[2026-04-10T10:50:50.725+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: rideshare_etl.transform_to_parquet scheduled__2026-04-09T00:00:00+00:00 [queued]>
+[2026-04-10T10:50:50.726+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-04-10T10:50:50.758+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform_to_parquet> on 2026-04-09 00:00:00+00:00
+[2026-04-10T10:50:50.769+0000] {standard_task_runner.py:60} INFO - Started process 234 to run task
+[2026-04-10T10:50:50.776+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'rideshare_etl', 'transform_to_parquet', 'scheduled__2026-04-09T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/rideshare_etl.py', '--cfg-path', '/tmp/tmplua424ke']
+[2026-04-10T10:50:50.780+0000] {standard_task_runner.py:88} INFO - Job 6: Subtask transform_to_parquet
+[2026-04-10T10:50:50.913+0000] {task_command.py:423} INFO - Running <TaskInstance: rideshare_etl.transform_to_parquet scheduled__2026-04-09T00:00:00+00:00 [running]> on host d1efc9a0b5df
+[2026-04-10T10:50:51.093+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='rideshare_etl' AIRFLOW_CTX_TASK_ID='transform_to_parquet' AIRFLOW_CTX_EXECUTION_DATE='2026-04-09T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-09T00:00:00+00:00'
+[2026-04-10T10:50:51.095+0000] {rideshare_etl.py:309} INFO - [Task 3] Transform starting for run: scheduled__2026-04-09T00:00:00+00:00
+[2026-04-10T10:50:51.108+0000] {rideshare_etl.py:319} INFO - [Task 3] Loading raw data from /opt/***/data/raw/rideshare_logs.csv
+[2026-04-10T10:51:00.772+0000] {rideshare_etl.py:321} INFO - [Task 3] Raw shape: (1458644, 11)
+[2026-04-10T10:51:00.773+0000] {logging_mixin.py:188} INFO - [validate] Checking schema contract...
+[2026-04-10T10:51:00.800+0000] {logging_mixin.py:188} INFO - [validate] Schema OK — 1,458,644 rows, 11 columns
+[2026-04-10T10:51:00.800+0000] {logging_mixin.py:188} INFO - [validate] All required columns present and parseable.
+[2026-04-10T10:51:00.801+0000] {logging_mixin.py:188} INFO - 
+[clean] Applying cleaning rules...
+[2026-04-10T10:51:02.458+0000] {logging_mixin.py:188} INFO - [clean]   Duration filter  : removed 11,030 rows
+[2026-04-10T10:51:03.106+0000] {logging_mixin.py:188} WARNING - /opt/***/src/data/make_dataset.py:156 SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+[2026-04-10T10:51:04.306+0000] {logging_mixin.py:188} INFO - [clean]   Distance filter  : removed 7,469 rows
+[2026-04-10T10:51:04.531+0000] {logging_mixin.py:188} INFO - [clean]   Passenger filter : removed 13 rows
+[2026-04-10T10:51:04.938+0000] {logging_mixin.py:188} INFO - [clean]   NYC bounds filter: removed 304 rows
+[2026-04-10T10:51:04.939+0000] {logging_mixin.py:188} INFO - 
+[clean] Total removed: 18,816 rows (1.3%)
+[2026-04-10T10:51:04.939+0000] {logging_mixin.py:188} INFO - [clean] Clean rows  : 1,439,828
+[2026-04-10T10:51:08.965+0000] {logging_mixin.py:188} INFO - 
+[engineer] Engineering features...
+[2026-04-10T10:51:09.690+0000] {logging_mixin.py:188} INFO - [engineer] Output columns: ['hour', 'day_of_week', 'month', 'is_weekend', 'is_rush_hour', 'distance_km', 'passenger_count', 'pickup_latitude', 'pickup_longitude', 'dropoff_latitude', 'dropoff_longitude', 'vendor_id', 'trip_duration', 'pickup_datetime']
+[2026-04-10T10:51:09.690+0000] {logging_mixin.py:188} INFO - [engineer] Final shape: (1439828, 14)
+[2026-04-10T10:51:16.573+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 428, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/rideshare_etl.py", line 330, in transform_to_parquet
+    size_mb = write_parquet(df, PROCESSED_PATH)
+  File "/opt/airflow/src/data/make_dataset.py", line 237, in write_parquet
+    df.to_parquet(path, index=False, compression="snappy")
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 2970, in to_parquet
+    return to_parquet(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 483, in to_parquet
+    impl.write(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 197, in write
+    path_or_handle, handles, filesystem = _get_path_or_handle(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/parquet.py", line 139, in _get_path_or_handle
+    handles = get_handle(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/common.py", line 872, in get_handle
+    handle = open(handle, ioargs.mode)
+PermissionError: [Errno 13] Permission denied: '/opt/airflow/data/processed/rideshare_clean.parquet'
+[2026-04-10T10:51:16.615+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=rideshare_etl, task_id=transform_to_parquet, execution_date=20260409T000000, start_date=20260410T105050, end_date=20260410T105116
+[2026-04-10T10:51:16.643+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 6 for task transform_to_parquet ([Errno 13] Permission denied: '/opt/airflow/data/processed/rideshare_clean.parquet'; 234)
+[2026-04-10T10:51:16.759+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-04-10T10:51:16.833+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

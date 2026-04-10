@@ -1,9 +1,9 @@
 {
-  "processed_at": "2026-04-10T09:00:57.487464Z",
-  "raw_source": "/app/data/raw/rideshare_logs.csv",
-  "processed_output": "/app/data/processed/rideshare_clean.parquet",
+  "processed_at": "2026-04-10T11:06:52.561296Z",
+  "raw_source": "/opt/airflow/data/raw/rideshare_logs.csv",
+  "processed_output": "/opt/airflow/data/processed/rideshare_clean.parquet",
   "rows_after_cleaning": 1439828,
-  "processed_hash": "015633072656946b0f164e816cb64b1a",
+  "processed_hash": "60ea1b2cf8faab47c51ddb1dace1223f",
   "cleaning_rules": {
     "min_duration_seconds": 60,
     "max_duration_seconds": 7200,
@@ -34,5 +34,7 @@
     "trip_duration",
     "pickup_datetime"
   ],
-  "parquet_size_mb": 40
+  "parquet_size_mb": 40,
+  "airflow_run_id": "manual__2026-04-10T10:50:31.929102+00:00",
+  "airflow_execution_date": "2026-04-10 10:50:31.929102+00:00"
 }

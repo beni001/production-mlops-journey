@@ -1,0 +1,22 @@
+[2026-04-10T11:06:55.421+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: rideshare_etl.verify_output manual__2026-04-10T10:50:31.929102+00:00 [queued]>
+[2026-04-10T11:06:55.437+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: rideshare_etl.verify_output manual__2026-04-10T10:50:31.929102+00:00 [queued]>
+[2026-04-10T11:06:55.437+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2026-04-10T11:06:55.472+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): verify_output> on 2026-04-10 10:50:31.929102+00:00
+[2026-04-10T11:06:55.497+0000] {standard_task_runner.py:60} INFO - Started process 491 to run task
+[2026-04-10T11:06:55.509+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'rideshare_etl', 'verify_output', 'manual__2026-04-10T10:50:31.929102+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/rideshare_etl.py', '--cfg-path', '/tmp/tmpvi7dws70']
+[2026-04-10T11:06:55.519+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask verify_output
+[2026-04-10T11:06:55.654+0000] {task_command.py:423} INFO - Running <TaskInstance: rideshare_etl.verify_output manual__2026-04-10T10:50:31.929102+00:00 [running]> on host d1efc9a0b5df
+[2026-04-10T11:06:55.913+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='mlops' AIRFLOW_CTX_DAG_ID='rideshare_etl' AIRFLOW_CTX_TASK_ID='verify_output' AIRFLOW_CTX_EXECUTION_DATE='2026-04-10T10:50:31.929102+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-10T10:50:31.929102+00:00'
+[2026-04-10T11:06:55.925+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:315 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2026-04-10T11:06:55.926+0000] {rideshare_etl.py:386} INFO - [Task 4] Output verification for run: 2026-04-10 10:50:31.929102+00:00
+[2026-04-10T11:06:56.353+0000] {rideshare_etl.py:397} INFO - [Task 4] Parquet loaded: (1439828, 14)
+[2026-04-10T11:06:56.370+0000] {rideshare_etl.py:438} INFO - [Task 4] Output verification PASSED.
+[2026-04-10T11:06:56.371+0000] {rideshare_etl.py:439} INFO - [Task 4] Rows: 1,439,828
+[2026-04-10T11:06:56.371+0000] {rideshare_etl.py:440} INFO - [Task 4] Columns: 14
+[2026-04-10T11:06:56.373+0000] {rideshare_etl.py:441} INFO - [Task 4] trip_duration range: 61s — 7191s
+[2026-04-10T11:06:56.381+0000] {rideshare_etl.py:443} INFO - [Task 4] distance_km range: 0.10km — 62.33km
+[2026-04-10T11:06:56.382+0000] {rideshare_etl.py:445} INFO - [Task 4] Pipeline complete. Data is clean and ready for training.
+[2026-04-10T11:06:56.382+0000] {python.py:201} INFO - Done. Returned value was: {'rows': 1439828, 'columns': 14, 'verified': True}
+[2026-04-10T11:06:56.807+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=rideshare_etl, task_id=verify_output, execution_date=20260410T105031, start_date=20260410T110655, end_date=20260410T110656
+[2026-04-10T11:06:56.942+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-10T11:06:57.042+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

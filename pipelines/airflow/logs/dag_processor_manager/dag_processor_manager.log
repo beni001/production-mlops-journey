@@ -1,0 +1,453 @@
+[2026-04-10T10:45:33.305+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2026-04-10T10:45:33.308+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2026-04-10T10:45:33.309+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 30 seconds
+[2026-04-10T10:45:33.310+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:45:33.325+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:45:34.035+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/rideshare_etl.py    159  0.31s             0           0
+================================================================================
+[2026-04-10T10:46:03.823+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:46:03.825+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:46:04.248+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  7.01s           2026-04-10T10:45:40
+================================================================================
+[2026-04-10T10:46:34.529+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:46:34.532+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:46:34.549+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.39s           2026-04-10T10:46:12
+================================================================================
+[2026-04-10T10:47:04.840+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:47:04.843+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:47:04.859+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.14s           2026-04-10T10:46:43
+================================================================================
+[2026-04-10T10:47:34.951+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:47:34.954+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:47:34.969+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.79s           2026-04-10T10:47:14
+================================================================================
+[2026-04-10T10:48:05.444+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:48:05.453+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:48:05.478+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.66s           2026-04-10T10:47:45
+================================================================================
+[2026-04-10T10:48:36.205+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:48:36.210+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:48:36.229+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  2.16s           2026-04-10T10:48:18
+================================================================================
+[2026-04-10T10:49:06.683+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:49:06.685+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:49:06.702+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.63s           2026-04-10T10:48:48
+================================================================================
+[2026-04-10T10:49:36.964+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:49:36.969+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:49:36.991+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.97s           2026-04-10T10:49:20
+================================================================================
+[2026-04-10T10:50:07.263+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:50:07.265+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:50:07.284+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.65s           2026-04-10T10:49:51
+================================================================================
+[2026-04-10T10:50:37.417+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:50:37.420+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:50:37.439+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.88s           2026-04-10T10:50:22
+================================================================================
+[2026-04-10T10:51:07.464+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:51:07.480+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:51:07.511+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.77s           2026-04-10T10:50:54
+================================================================================
+[2026-04-10T10:51:37.867+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:51:37.880+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:51:37.923+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.85s           2026-04-10T10:51:26
+================================================================================
+[2026-04-10T10:52:08.255+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:52:08.257+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:52:08.274+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.67s           2026-04-10T10:51:57
+================================================================================
+[2026-04-10T10:52:38.702+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:52:38.704+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:52:38.720+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.70s           2026-04-10T10:52:28
+================================================================================
+[2026-04-10T10:53:08.958+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:53:08.960+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:53:08.976+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.60s           2026-04-10T10:52:58
+================================================================================
+[2026-04-10T10:53:39.446+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:53:39.449+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:53:39.466+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.37s           2026-04-10T10:53:30
+================================================================================
+[2026-04-10T10:54:09.952+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:54:09.954+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:54:09.969+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.61s           2026-04-10T10:54:01
+================================================================================
+[2026-04-10T10:54:40.300+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:54:40.303+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:54:40.337+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.93s           2026-04-10T10:54:32
+================================================================================
+[2026-04-10T10:55:10.797+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:55:10.800+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:55:10.818+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.50s           2026-04-10T10:55:04
+================================================================================
+[2026-04-10T10:55:41.047+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:55:41.058+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:55:41.082+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.71s           2026-04-10T10:55:35
+================================================================================
+[2026-04-10T10:56:11.398+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:56:11.419+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:56:11.449+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.86s           2026-04-10T10:56:06
+================================================================================
+[2026-04-10T10:56:41.937+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:56:41.960+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:56:42.020+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                             PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py    331  3.11s             1           0  0.86s           2026-04-10T10:56:06
+================================================================================
+[2026-04-10T10:57:12.537+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:57:12.539+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:57:12.568+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  7.35s           2026-04-10T10:56:46
+================================================================================
+[2026-04-10T10:57:42.932+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:57:42.936+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:57:42.975+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.98s           2026-04-10T10:57:17
+================================================================================
+[2026-04-10T10:58:13.234+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:58:13.242+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:58:13.262+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.90s           2026-04-10T10:57:48
+================================================================================
+[2026-04-10T10:58:43.688+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:58:43.691+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:58:43.706+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.59s           2026-04-10T10:58:19
+================================================================================
+[2026-04-10T10:59:14.620+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:59:14.630+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:59:14.652+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.05s           2026-04-10T10:58:51
+================================================================================
+[2026-04-10T10:59:44.964+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T10:59:44.966+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T10:59:44.985+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.91s           2026-04-10T10:59:22
+================================================================================
+[2026-04-10T11:00:15.205+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:00:15.209+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:00:15.249+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.86s           2026-04-10T10:59:53
+================================================================================
+[2026-04-10T11:00:45.399+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:00:45.404+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:00:45.423+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.81s           2026-04-10T11:00:25
+================================================================================
+[2026-04-10T11:01:15.697+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:01:15.705+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:01:15.727+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.98s           2026-04-10T11:00:56
+================================================================================
+[2026-04-10T11:01:45.908+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:01:45.911+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:01:45.930+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.92s           2026-04-10T11:01:27
+================================================================================
+[2026-04-10T11:02:16.187+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:02:16.189+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:02:16.205+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.97s           2026-04-10T11:01:58
+================================================================================
+[2026-04-10T11:02:46.509+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:02:46.511+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:02:46.533+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.99s           2026-04-10T11:02:30
+================================================================================
+[2026-04-10T11:03:17.013+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:03:17.016+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:03:17.036+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.22s           2026-04-10T11:03:01
+================================================================================
+[2026-04-10T11:03:47.332+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:03:47.334+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:03:47.347+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.52s           2026-04-10T11:03:33
+================================================================================
+[2026-04-10T11:04:17.643+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:04:17.652+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:04:17.681+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.90s           2026-04-10T11:04:04
+================================================================================
+[2026-04-10T11:04:47.853+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:04:47.857+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:04:47.879+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.50s           2026-04-10T11:04:36
+================================================================================
+[2026-04-10T11:05:18.597+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:05:18.599+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:05:18.615+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.74s           2026-04-10T11:05:08
+================================================================================
+[2026-04-10T11:05:49.105+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:05:49.108+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:05:49.128+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.16s           2026-04-10T11:05:40
+================================================================================
+[2026-04-10T11:06:19.533+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:06:19.537+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:06:19.568+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.39s           2026-04-10T11:06:11
+================================================================================
+[2026-04-10T11:06:50.049+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:06:50.051+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:06:50.073+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.58s           2026-04-10T11:06:43
+================================================================================
+[2026-04-10T11:07:20.117+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:07:20.120+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:07:20.139+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  1.48s           2026-04-10T11:07:15
+================================================================================
+[2026-04-10T11:07:50.308+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-04-10T11:07:50.309+0000] {manager.py:741} INFO - There are 1 files in /opt/airflow/dags
+[2026-04-10T11:07:50.325+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/rideshare_etl.py                           1           0  0.93s           2026-04-10T11:07:46
+================================================================================
