@@ -1,0 +1,5 @@
+outs:
+- md5: 015633072656946b0f164e816cb64b1a
+  size: 42174385
+  hash: md5
+  path: rideshare_clean.parquet

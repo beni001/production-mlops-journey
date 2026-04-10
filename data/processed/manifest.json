@@ -1,0 +1,38 @@
+{
+  "processed_at": "2026-04-10T09:00:57.487464Z",
+  "raw_source": "/app/data/raw/rideshare_logs.csv",
+  "processed_output": "/app/data/processed/rideshare_clean.parquet",
+  "rows_after_cleaning": 1439828,
+  "processed_hash": "015633072656946b0f164e816cb64b1a",
+  "cleaning_rules": {
+    "min_duration_seconds": 60,
+    "max_duration_seconds": 7200,
+    "min_distance_km": 0.1,
+    "min_passenger_count": 1,
+    "nyc_lat_bounds": [
+      40.4,
+      41.0
+    ],
+    "nyc_lon_bounds": [
+      -74.5,
+      -73.5
+    ]
+  },
+  "output_columns": [
+    "hour",
+    "day_of_week",
+    "month",
+    "is_weekend",
+    "is_rush_hour",
+    "distance_km",
+    "passenger_count",
+    "pickup_latitude",
+    "pickup_longitude",
+    "dropoff_latitude",
+    "dropoff_longitude",
+    "vendor_id",
+    "trip_duration",
+    "pickup_datetime"
+  ],
+  "parquet_size_mb": 40
+}

@@ -42,3 +42,4 @@ feature-engine==1.6.2
 # python-dotenv: loads .env files (never commit .env to git)
 click==8.1.7
 python-dotenv==1.0.1
+pyarrow==15.0.0

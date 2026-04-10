@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Model artifacts — DVC owns these
+*.pkl
+*.joblib
+
+# Metrics — committed explicitly
+# models — DVC tracked via .dvc files
+
+# Environment
+.env
+.env.*
+
+# OS noise
+.DS_Store
+Thumbs.db
