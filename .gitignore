@@ -18,3 +18,5 @@ __pycache__/
 # OS noise
 .DS_Store
 Thumbs.db
+pipelines/airflow/logs/
+pipelines/airflow/logs/
