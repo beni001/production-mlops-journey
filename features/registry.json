@@ -1,0 +1,164 @@
+{
+  "version": "1.0.0",
+  "created": "2026-04-10",
+  "description": "Rideshare demand predictor — canonical feature registry",
+  "project": "production-mlops-journey",
+
+  "entities": [
+    {
+      "name": "trip",
+      "description": "A single rideshare trip request",
+      "join_key": "id",
+      "value_type": "STRING"
+    }
+  ],
+
+  "feature_views": [
+    {
+      "name": "trip_temporal_features",
+      "description": "Features derived from pickup timestamp. Available at request time — no future data required.",
+      "entity": "trip",
+      "source": "data/processed/rideshare_clean.parquet",
+      "timestamp_column": "pickup_datetime",
+      "ttl_days": 365,
+      "features": [
+        {
+          "name": "hour",
+          "dtype": "int32",
+          "description": "Hour of pickup (0-23). Captures time-of-day demand cycles.",
+          "computation": "pickup_datetime.dt.hour",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "day_of_week",
+          "dtype": "int32",
+          "description": "Day of week (0=Monday, 6=Sunday). Captures weekly demand patterns.",
+          "computation": "pickup_datetime.dt.dayofweek",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "month",
+          "dtype": "int32",
+          "description": "Month (1-12). Captures seasonal patterns.",
+          "computation": "pickup_datetime.dt.month",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "is_weekend",
+          "dtype": "int32",
+          "description": "1 if Saturday or Sunday, 0 otherwise. Weekends have structurally different demand.",
+          "computation": "(day_of_week >= 5).astype(int)",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "is_rush_hour",
+          "dtype": "int32",
+          "description": "1 if 7-9am or 5-7pm, 0 otherwise. Rush hour trips take significantly longer.",
+          "computation": "hour.isin([7,8,9,17,18,19]).astype(int)",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        }
+      ]
+    },
+    {
+      "name": "trip_spatial_features",
+      "description": "Features derived from GPS coordinates. Available at request time.",
+      "entity": "trip",
+      "source": "data/processed/rideshare_clean.parquet",
+      "timestamp_column": "pickup_datetime",
+      "ttl_days": 365,
+      "features": [
+        {
+          "name": "distance_km",
+          "dtype": "float64",
+          "description": "Haversine distance between pickup and dropoff in km. Strongest predictor of duration.",
+          "computation": "haversine(pickup_lat, pickup_lon, dropoff_lat, dropoff_lon)",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "pickup_latitude",
+          "dtype": "float64",
+          "description": "GPS latitude of pickup location.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "pickup_longitude",
+          "dtype": "float64",
+          "description": "GPS longitude of pickup location.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "dropoff_latitude",
+          "dtype": "float64",
+          "description": "GPS latitude of dropoff location.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "dropoff_longitude",
+          "dtype": "float64",
+          "description": "GPS longitude of dropoff location.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        }
+      ]
+    },
+    {
+      "name": "trip_demand_features",
+      "description": "Point-in-time demand aggregations. CRITICAL: must use only past data relative to each trip timestamp.",
+      "entity": "trip",
+      "source": "data/processed/rideshare_clean.parquet",
+      "timestamp_column": "pickup_datetime",
+      "ttl_days": 365,
+      "features": [
+        {
+          "name": "avg_duration_same_hour_last7days",
+          "dtype": "float64",
+          "description": "Average trip duration for same hour-of-day over previous 7 days. Point-in-time: only trips before this timestamp.",
+          "computation": "temporal_join — see feature_views.py",
+          "available_at_inference": false,
+          "leakage_risk": "HIGH if computed globally — must use point-in-time join"
+        },
+        {
+          "name": "trip_count_last_1h",
+          "dtype": "int32",
+          "description": "Number of trips started in the 60 minutes before this trip. Proxy for demand level.",
+          "computation": "temporal_join — see feature_views.py",
+          "available_at_inference": false,
+          "leakage_risk": "HIGH if computed globally — must use point-in-time join"
+        }
+      ]
+    }
+  ],
+
+  "feature_services": [
+    {
+      "name": "rideshare_training_features",
+      "description": "Full feature set for model training. Includes point-in-time demand features.",
+      "feature_views": [
+        "trip_temporal_features",
+        "trip_spatial_features",
+        "trip_demand_features"
+      ]
+    },
+    {
+      "name": "rideshare_inference_features",
+      "description": "Features available at inference time. Excludes demand aggregations that require historical lookback.",
+      "feature_views": [
+        "trip_temporal_features",
+        "trip_spatial_features"
+      ]
+    }
+  ]
+}
