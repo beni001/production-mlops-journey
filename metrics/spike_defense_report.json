@@ -1,0 +1,38 @@
+{
+  "experiment": "cost_sensitive_weighting_day12",
+  "spike_definition": "trip_duration > p95 (1998s / 33.3 min)",
+  "spike_weight_applied": 5.0,
+  "baseline": {
+    "model": "xgboost_baseline",
+    "global_rmse": 338.1,
+    "global_r2": 0.7778,
+    "normal_rmse": 266.0,
+    "normal_bias": -26.8,
+    "normal_p95": 549.1,
+    "spike_rmse": 970.8,
+    "spike_bias": 583.9,
+    "spike_p95": 1945.1,
+    "ratio": 3.65
+  },
+  "weighted": {
+    "model": "xgboost_weighted_5x",
+    "global_rmse": 348.4,
+    "global_r2": 0.7604,
+    "normal_rmse": 281.1,
+    "normal_bias": -68.7,
+    "normal_p95": 588.3,
+    "spike_rmse": 825.0,
+    "spike_bias": 426.6,
+    "spike_p95": 1693.9,
+    "ratio": 2.93
+  },
+  "tradeoffs": {
+    "global_rmse_delta": "+10.3s (worse)",
+    "normal_rmse_delta": "+15.1s (worse)",
+    "spike_rmse_delta": "-145.8s (better)",
+    "spike_bias_delta": "-157.3s (better)",
+    "spike_p95_delta": "-251.2s (better)",
+    "ratio_delta": "3.65x -> 2.93x (better)"
+  },
+  "verdict": "Weighted model accepted 10s worse global RMSE to achieve 146s better spike RMSE. For a rideshare business where long trips generate 3x revenue, this tradeoff is justified. Recommend deploying weighted model for airport/long-haul routes."
+}
