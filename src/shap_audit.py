@@ -148,7 +148,7 @@ def impossible_power_test(shap_values: np.ndarray, feature_names: list) -> dict:
             "feature":    feat,
             "mean_abs_shap": round(float(mean_shap), 2),
             "fraction":      round(float(fraction), 4),
-            "dominant":      fraction > DOMINANCE_THRESHOLD,
+            "dominant":      bool(fraction > DOMINANCE_THRESHOLD),
         })
 
     print(f"[shap] ──────────────────────────────────────────────")
@@ -218,7 +218,7 @@ def registry_cross_reference(power_results: dict, registry_flags: dict) -> dict:
     return {
         "leakage_violations": violations,
         "warnings":           warnings_list,
-        "clean":              len(violations) == 0,
+        "clean":              bool(len(violations) == 0),
     }
 
 

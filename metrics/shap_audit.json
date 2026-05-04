@@ -2,82 +2,89 @@
   "audit_date": "2026-04-21",
   "model_path": "models/xgboost_model.pkl",
   "sample_size": 5000,
-  "base_value_seconds": 824.4,
+  "base_value_seconds": 824.42,
   "dominance_threshold": 0.7,
-  "verdict": "CLEAN",
-  "findings": {
-    "leakage_detected": false,
-    "dominant_feature": "distance_km",
-    "dominant_fraction": 0.502,
-    "dominant_flag_triggered": false,
-    "all_features_available_at_inference": true
+  "power_test": {
+    "rankings": [
+      {
+        "feature": "distance_km",
+        "mean_abs_shap": 367.92,
+        "fraction": 0.5019,
+        "dominant": false
+      },
+      {
+        "feature": "hour",
+        "mean_abs_shap": 117.98,
+        "fraction": 0.161,
+        "dominant": false
+      },
+      {
+        "feature": "dropoff_latitude",
+        "mean_abs_shap": 52.77,
+        "fraction": 0.072,
+        "dominant": false
+      },
+      {
+        "feature": "day_of_week",
+        "mean_abs_shap": 51.25,
+        "fraction": 0.0699,
+        "dominant": false
+      },
+      {
+        "feature": "month",
+        "mean_abs_shap": 49.66,
+        "fraction": 0.0678,
+        "dominant": false
+      },
+      {
+        "feature": "dropoff_longitude",
+        "mean_abs_shap": 29.42,
+        "fraction": 0.0401,
+        "dominant": false
+      },
+      {
+        "feature": "pickup_longitude",
+        "mean_abs_shap": 25.93,
+        "fraction": 0.0354,
+        "dominant": false
+      },
+      {
+        "feature": "pickup_latitude",
+        "mean_abs_shap": 15.96,
+        "fraction": 0.0218,
+        "dominant": false
+      },
+      {
+        "feature": "is_weekend",
+        "mean_abs_shap": 13.23,
+        "fraction": 0.018,
+        "dominant": false
+      },
+      {
+        "feature": "passenger_count",
+        "mean_abs_shap": 4.65,
+        "fraction": 0.0063,
+        "dominant": false
+      },
+      {
+        "feature": "vendor_id",
+        "mean_abs_shap": 2.43,
+        "fraction": 0.0033,
+        "dominant": false
+      },
+      {
+        "feature": "is_rush_hour",
+        "mean_abs_shap": 1.81,
+        "fraction": 0.0025,
+        "dominant": false
+      }
+    ],
+    "dominant_features": []
   },
-  "shap_rankings": [
-    {
-      "feature": "distance_km",
-      "mean_abs_shap": 367.9,
-      "fraction": 0.502
-    },
-    {
-      "feature": "hour",
-      "mean_abs_shap": 118.0,
-      "fraction": 0.161
-    },
-    {
-      "feature": "dropoff_latitude",
-      "mean_abs_shap": 52.8,
-      "fraction": 0.072
-    },
-    {
-      "feature": "day_of_week",
-      "mean_abs_shap": 51.2,
-      "fraction": 0.07
-    },
-    {
-      "feature": "month",
-      "mean_abs_shap": 49.7,
-      "fraction": 0.068
-    },
-    {
-      "feature": "dropoff_longitude",
-      "mean_abs_shap": 29.4,
-      "fraction": 0.04
-    },
-    {
-      "feature": "pickup_longitude",
-      "mean_abs_shap": 25.9,
-      "fraction": 0.035
-    },
-    {
-      "feature": "pickup_latitude",
-      "mean_abs_shap": 16.0,
-      "fraction": 0.022
-    },
-    {
-      "feature": "is_weekend",
-      "mean_abs_shap": 13.2,
-      "fraction": 0.018
-    },
-    {
-      "feature": "passenger_count",
-      "mean_abs_shap": 4.6,
-      "fraction": 0.006
-    },
-    {
-      "feature": "vendor_id",
-      "mean_abs_shap": 2.4,
-      "fraction": 0.003
-    },
-    {
-      "feature": "is_rush_hour",
-      "mean_abs_shap": 1.8,
-      "fraction": 0.002
-    }
-  ],
-  "known_gaps": [
-    "passenger_count and vendor_id not in registry.json \u2014 add on next registry update",
-    "is_rush_hour at 0.2% SHAP is effectively redundant given hour at 16.1% \u2014 candidate for removal"
-  ],
-  "additivity_check": "PASSED \u2014 5/5 predictions verified at 0.00s diff",
-  "registry_cross_reference": "CLEAN \u2014 all high-importance features confirmed available at inference time"
+  "registry_audit": {
+    "leakage_violations": [],
+    "warnings": [],
+    "clean": true
+  },
+  "verdict": "CLEAN"
 }

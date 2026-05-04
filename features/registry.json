@@ -1,9 +1,8 @@
 {
   "version": "1.0.0",
   "created": "2026-04-10",
-  "description": "Rideshare demand predictor — canonical feature registry",
+  "description": "Rideshare demand predictor \u2014 canonical feature registry",
   "project": "production-mlops-journey",
-
   "entities": [
     {
       "name": "trip",
@@ -12,11 +11,10 @@
       "value_type": "STRING"
     }
   ],
-
   "feature_views": [
     {
       "name": "trip_temporal_features",
-      "description": "Features derived from pickup timestamp. Available at request time — no future data required.",
+      "description": "Features derived from pickup timestamp. Available at request time \u2014 no future data required.",
       "entity": "trip",
       "source": "data/processed/rideshare_clean.parquet",
       "timestamp_column": "pickup_datetime",
@@ -111,6 +109,22 @@
           "computation": "raw column",
           "available_at_inference": true,
           "leakage_risk": "none"
+        },
+        {
+          "name": "passenger_count",
+          "dtype": "int32",
+          "description": "Number of passengers declared at booking. Weak predictor but available at request time.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
+        },
+        {
+          "name": "vendor_id",
+          "dtype": "int32",
+          "description": "Taxi vendor (1 or 2). Different vendors have slightly different route preferences.",
+          "computation": "raw column",
+          "available_at_inference": true,
+          "leakage_risk": "none"
         }
       ]
     },
@@ -126,22 +140,21 @@
           "name": "avg_duration_same_hour_last7days",
           "dtype": "float64",
           "description": "Average trip duration for same hour-of-day over previous 7 days. Point-in-time: only trips before this timestamp.",
-          "computation": "temporal_join — see feature_views.py",
+          "computation": "temporal_join \u2014 see feature_views.py",
           "available_at_inference": false,
-          "leakage_risk": "HIGH if computed globally — must use point-in-time join"
+          "leakage_risk": "HIGH if computed globally \u2014 must use point-in-time join"
         },
         {
           "name": "trip_count_last_1h",
           "dtype": "int32",
           "description": "Number of trips started in the 60 minutes before this trip. Proxy for demand level.",
-          "computation": "temporal_join — see feature_views.py",
+          "computation": "temporal_join \u2014 see feature_views.py",
           "available_at_inference": false,
-          "leakage_risk": "HIGH if computed globally — must use point-in-time join"
+          "leakage_risk": "HIGH if computed globally \u2014 must use point-in-time join"
         }
       ]
     }
   ],
-
   "feature_services": [
     {
       "name": "rideshare_training_features",
