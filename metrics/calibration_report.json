@@ -1,0 +1,67 @@
+{
+  "audit_date": "2026-04-21",
+  "spike_threshold": 1998.0,
+  "spike_percentile": 0.95,
+  "override_threshold": 0.4,
+  "historical_mean": 816.8,
+  "uncalibrated": {
+    "label": "uncalibrated",
+    "ece": 0.0176,
+    "brier_score": 0.0296,
+    "actual_spike_rate": 0.0705,
+    "predicted_spike_rate": 0.0667,
+    "fraction_positive": [
+      0.0116,
+      0.185,
+      0.331,
+      0.5094,
+      0.7149,
+      0.8395,
+      0.9611
+    ],
+    "mean_predicted_prob": [
+      0.0089,
+      0.1606,
+      0.2904,
+      0.5148,
+      0.7254,
+      0.8703,
+      0.9696
+    ]
+  },
+  "calibrated": {
+    "label": "calibrated",
+    "ece": 0.0,
+    "brier_score": 0.0295,
+    "actual_spike_rate": 0.0705,
+    "predicted_spike_rate": 0.0705,
+    "fraction_positive": [
+      0.0116,
+      0.185,
+      0.331,
+      0.5094,
+      0.7149,
+      0.8395,
+      0.9611
+    ],
+    "mean_predicted_prob": [
+      0.0116,
+      0.185,
+      0.331,
+      0.5094,
+      0.7149,
+      0.8395,
+      0.9611
+    ]
+  },
+  "override": {
+    "override_threshold": 0.4,
+    "override_count": 10842,
+    "override_pct": 5.75,
+    "precision": 0.774,
+    "recall": 0.6318,
+    "spikes_caught": 8392,
+    "total_spikes": 13282
+  },
+  "ece_improvement": 0.0176
+}
