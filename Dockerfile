@@ -184,6 +184,7 @@ RUN pip install --no-cache-dir --no-index \
     && rm -rf /wheels requirements-inference.txt
 
 WORKDIR /app
+COPY features/ ./features/
 COPY src/ ./src/
 
 # MODEL_PATH: the single contract between training and inference.
@@ -207,7 +208,7 @@ RUN useradd -m -u 1000 mlops \
     && chown -R mlops:mlops /app /models
 USER mlops
 
-ENTRYPOINT ["python3.10", "-m", "src.serve"]
+ENTRYPOINT ["python3.10", "-m", "uvicorn", "src.serve:app", "--host", "0.0.0.0", "--port", "8000"]
 CMD []
 
 # Document the port — Day 16 wires FastAPI to this port
